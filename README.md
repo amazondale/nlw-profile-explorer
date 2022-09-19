@@ -4,7 +4,7 @@
 
 >Trilha Explorer
 
-Projeto construído no evento Next Level Week da da Rocketseat.
+Projeto construído no evento 'Next Level Week' da Rocketseat.
 
 🔗 [Clique aqui para acessar](https://amazondale.github.io/nlw-profile-explorer/)
 
@@ -24,9 +24,11 @@ No CSS propriedades como transform:scale, keyframes, transition, animation, font
 Sincronização e boas práticas de repositório Git.
 
 
-## 📧 Contato
+## 🌐 Contato
 
-amazon.dale2020@gmail.com
+📩 amazon.dale2020@gmail.com
+
+☎️ +55 (69) 99339-3778
 
 
   

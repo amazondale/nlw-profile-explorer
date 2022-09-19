@@ -1,0 +1,253 @@
+
+*{
+ /*  o "*" é o setelor universal  */
+
+    /*Reset CSS*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    /*Reset CSS*/
+    list-style: none;
+}
+
+header{
+    padding-top: 32px;
+    height: calc(120px + 32px + 32px);
+}
+
+header div{
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    
+    border-radius: 50%;
+    
+    display: flex;
+    padding: 4px;
+
+    transition: transform .3s; 
+
+    /* para a execução 'animation' deve ter pelo menos 2 propriedades: o nome da animação "fromTop" e o tempo que ela precisa para executar ".7s"
+    entretanto existe também a possibilidade de delay e de mudar a ordem da execução da animação programada "backwards"
+    ex:  
+    
+    "animation: fromTop .7s .4s backwards;" */
+
+    animation: fromTop .7s .4s backwards;
+}
+
+    /*  Para o efeito desejado aplico uma propriedade quando passar o mouse em cima da imagem 'div:hover' { transform: scale (1.1) } 
+    e coloco uma 'transition'dentro do div para a propriedade ':hover transform' funcionar de forma mais suave. */
+
+header div:hover{
+    transform: scale(1.1);
+}
+
+header div img{
+    width: 120px;
+    border-radius: 50%;
+}
+
+body{
+    
+    /*CSS trabalha com uma propriedade (ex. background-image: ) e uma função (ex. url();  ) */
+    
+    background-image: url(./Assets/bg.jpg); /*  "./" indica pasta local na função url  */
+    
+    /* reset do background CSS */
+    background-position: top center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    /* peguei a cor no exemplo do figma nlw esport */
+    background-color: #121214;
+} 
+
+body *{
+    
+    /* peguei o link da fonte no fonts.google.com, incluí no head do html, antes do meta */
+
+    font-family: 'inter', sans-serif; 
+    line-height: 160%;
+}
+
+
+main{
+    max-width: 580px;
+    width: 90%;
+  
+    /*  quando uso duas funções na propriedade 'margin' o tamanho '32px' relaciona-se ao top e bottom da página, o 'auto' aos lados. */
+    margin: 32px auto;
+
+    /* display: 'grid' coloca os blocos em grade abaixo um do outro. */
+    display: grid;
+    gap: 24px; 
+
+    /* outra forma de fazer o display com as sections abaixo uma da outra seria: 
+    
+    Display:flex;
+    flex-direction: column;
+    gap: 24px; 
+    */
+}
+
+main section {
+    animation: fromBottom .7s;
+}
+
+    /* para fazer a animação das sections em cascata, coloca um delay para cada 'section-child' */
+
+main section:nth-child(1) {
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    animation-delay: .2s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .4s;
+}
+
+main section:nth-child(4) {
+    animation-delay: .6s;
+} 
+
+section{
+    color: white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+section div{ 
+    
+    /* estruturar o div dentro do section, pois o section sera um quadro atrás colorido com deslocamento superior para funcionar como uma borda estilizada
+
+    > padding espaçamento dentro da section */
+    
+    background-color: #2A2634; 
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+
+}
+
+section h2{
+    /* já é padrão do navegador font-weith e font-size.
+
+    font-weight: 900;
+    font-size: 24px; */
+    
+    letter-spacing: -0.47px;
+}
+
+section p{
+    /* já é padrão do navegador font-weith e font-size.
+    font-weight: 400;
+    font-size: 16px; */
+   
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+section ul{
+    /* display por padrão é 'block', bloqueando uma linha inteira de pixel deixando os elementos um abaixo do outro.
+    outra função da propriedade 'display' é o flex, que vai deixar tudo alinhado lado a lado. 
+    O elemento 'a' tem por padrão um displau 'inline' lado a lado. */
+    
+    display: flex;
+
+    /* para auto ajustar e não aumentar a largura da section. */
+
+    flex-wrap: wrap;
+
+    /* colocar espaçamento de 24px entre cada section */ 
+
+    margin-top: 24px;
+
+    /* gap entre as li, peguei no Figma */
+
+    gap: 16px;
+}
+
+    /* Para o efeito desejado aplico uma propriedade quando passar o mouse em cima da imagem 'div :hover' { transform: scale (1.1) } 
+    e coloco uma 'transition'dentro do div para a propriedade ':hover transform' funcionar de forma mais suave. */
+
+section ul li {
+    transition: transform .3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+
+}
+
+.book-list img{
+    
+    /* largura da lista e 
+    arrendodamento de borda */
+
+    width: 90px;
+    height: 120px;
+    border-radius: 8px;
+    border: 1px solid #443E54;
+}
+
+.channel-list img{
+    width: 70px;
+    border-radius: 50%;
+    border: 1px solid #443E54;
+}
+
+.fronteditor-img img{
+    width: 34px;
+}
+
+.figma-img img{
+    max-width: 26px;
+    padding-top: 18px;
+}
+
+.social-list img{
+    width: 32px;
+    height: 32px;
+}
+
+
+    /* animation 
+
+    para criar uma animação tem que dar um nome "fromTop" (qualquer nome), e eu digo onde vai começar (from) e onde vai terminar (to).
+
+    para a execução 'animation' deve ter pelo menos 2 propriedades: o nome da animação "fromTop" e o tempo que ela precisa para executar ".7s"
+    entretanto existe também a possibilidade de delay e de mudar a ordem da execução da animação programada "backwards"
+    ex:  
+
+    "animation: fromTop .7s .4s backwards;"   */
+
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
